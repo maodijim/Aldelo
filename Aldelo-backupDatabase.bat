@@ -1,6 +1,5 @@
 @echo off 
-::Version 1.2
-:restart
+::Version 1.1
 chdir "C:\ProgramData\Aldelo\Aldelo For Restaurants\Backup"
 IF %errorlevel% == 1 md "C:\ProgramData\Aldelo\Aldelo For Restaurants\Backup"
 for /f "tokens=1,2,3,4 delims=/ " %%a in ("%date%") do (
@@ -23,10 +22,6 @@ for /f "tokens=1,2,3 delims=," %%A in (aldelo.t) do (
 set database=%%A
 set location=%%B
 set save=%%C
-IF NOT EXIST %database% (
-del /a "C:\ProgramData\Aldelo\Aldelo For Restaurants\Backup\aldelo.t"
-goto restart 
-)
 goto new
 :new
 Choice /T 5 /D N /M "Would you like to start over"
