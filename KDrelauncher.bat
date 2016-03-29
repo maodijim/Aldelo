@@ -4,6 +4,8 @@ tasklist /fi "imagename eq adKDS30.exe" /fi "status eq running" | findstr /i "ad
 if %errorlevel% == 1 start "" "C:\Program Files (x86)\Aldelo\Aldelo For Restaurants\Aldelo Kitchen Display Server\adKDS30.exe"
 tasklist /fi "imagename eq KCPManager.exe" /fi "status eq running" | findstr /i "KCPManager.exe"
 if %errorlevel% == 1 start "" "C:\Users\Administrator\Desktop\KCPManager.exe"
+@echo.
+echo Don't Close this Program. It re-launch kitchen display if close.
 timeout /t 10
 cls
 goto loop
