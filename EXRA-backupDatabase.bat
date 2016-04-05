@@ -1,5 +1,5 @@
 @echo off
-:: Version 1.1
+:: Version 1.2
 chdir C:\ProgramData\Aldelo
 IF %errorlevel% == 1 md C:\ProgramData\Aldelo
 for /f "tokens=1,2,3,4 delims=/ " %%a in ("%date%") do (
@@ -28,7 +28,7 @@ goto new
 :new
 Choice /T 5 /D N /M "Would you like to start over"
 IF %errorlevel% == 1 (
-del /a "C:\ProgramData\Aldelo\Aldelo For Restaurants\Backup\aldelo.t"
+del /a "C:\ProgramData\Aldelo\%userdomain%.d"
 schtasks /delete /tn "AldelodailyBackup" /f
 exit
 )
